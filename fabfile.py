@@ -1,5 +1,5 @@
 import vagrant
-from fabric.api import env, task, run
+from fabric.api import env, task, run, sudo
 
 
 # Initialize vagrant instance and set the hosts, key_filename and
@@ -14,3 +14,11 @@ env.disable_known_hosts = True  # useful for when the vagrant box ip changes.
 @task
 def mytask():
     run('echo $USER')
+
+
+@task
+def invoke(command):
+    """
+    Invoke an arbitrary command
+    """
+    sudo(command)
