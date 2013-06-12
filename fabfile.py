@@ -7,6 +7,7 @@ from fabric.api import env, task, run, sudo
 v = vagrant.Vagrant()
 v.up()
 env.hosts = [v.user_hostname_port()]
+print(env.hosts)
 env.key_filename = v.keyfile()
 env.disable_known_hosts = True  # useful for when the vagrant box ip changes.
 
@@ -22,3 +23,8 @@ def invoke(command):
     Invoke an arbitrary command
     """
     sudo(command)
+
+
+@task
+def host_type():
+    run('uname -s')
