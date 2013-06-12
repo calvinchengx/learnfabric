@@ -8,7 +8,6 @@ from fabric.operations import local
 v = vagrant.Vagrant()
 v.up()
 env.hosts = [v.user_hostname_port()]
-print(env.hosts)
 env.key_filename = v.keyfile()
 env.disable_known_hosts = True  # useful for when the vagrant box ip changes.
 
