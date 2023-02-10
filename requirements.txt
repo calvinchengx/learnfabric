@@ -1,6 +1,6 @@
 Fabric==1.6.1
 distribute==0.6.31
-ipython==7.16.3
+ipython==8.10.0
 paramiko==2.10.1
 pycrypto==2.6
 python-vagrant==0.3.1
